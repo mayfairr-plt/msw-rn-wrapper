@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "rootDir": ".",
     "paths": {
       "msw-rn-wrapper": ["./src/index"]
@@ -24,5 +25,8 @@
     "strict": true,
     "target": "esnext",
     "verbatimModuleSyntax": true
-  }
+  },
+  "exclude": [
+    "src/server/server.ts"
+  ]
 }

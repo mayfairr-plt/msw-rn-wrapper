@@ -1,22 +1,44 @@
-# msw-rn-wrapper
+# MSW React Native Wrapper
 
-Wrapper for MSW with React Native Support 
+A convenient wrapper for MSW (Mock Service Worker) with React Native support.
+
+## Features
+
+- Dynamic Mock Scenarios
+- Seamless react native integration
+- In-place database store with read/write access.
+
+## Pre-requisites
+
+1. Add the following plugins to babel.config.js:
+
+```js
+'@babel/plugin-transform-flow-strip-types',
+['@babel/plugin-transform-private-methods', { loose: true }],
+```
+
+2. In your entry file, add `import 'msw-rn-wrapper';`
 
 ## Installation
 
 ```sh
 npm install msw-rn-wrapper
+or
+yarn add msw-rn-wrapper
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'msw-rn-wrapper';
+import { MSWProvider } from 'msw-rn-wrapper';
 
-// ...
-
-const result = await multiply(3, 7);
+<MSWProvider enabled={true}>
+  {' '}
+  // Should be enabled based on env // ...
+</MSWProvider>;
 ```
+
+To activate the mock service worker during development, use `⌃⌘Z` and select `View MSW Settings`.
 
 ## Contributing
 
@@ -28,4 +50,4 @@ MIT
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+Written for use by [@PLT (PrettyLittleThing)]('https://www.prettylittlething.com/').
