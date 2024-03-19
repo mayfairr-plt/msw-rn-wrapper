@@ -152,8 +152,10 @@
     ]
   },
   "dependencies": {
+    "@mswjs/data": "^0.16.1",
     "fast-text-encoding": "^1.0.6",
     "msw": "latest",
+    "react-native-mmkv": "^2.12.2",
     "react-native-url-polyfill": "^2.0.0",
     "text-encoding-polyfill": "^0.6.7"
   }
