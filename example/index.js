@@ -1,6 +1,7 @@
 /**
  * @format
  */
+import 'msw-rn-wrapper';
 
 import {AppRegistry} from 'react-native';
 import {App} from './App';

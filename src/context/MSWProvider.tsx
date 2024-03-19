@@ -6,10 +6,16 @@ import {
 } from './types/MSWProvider.types';
 import { MSWReducer } from './MSWReducer';
 import { createDeveloperMenu } from '../menu';
+import { generateKey, storage } from '../utils/storage';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { BottomSheetPopup } from '../menu';
+import { startServer } from '../server';
 
 const initialState: MSWContextValues = {
   flow: 'checkout',
-  enabled: false,
+  enableMSWInEnv: false,
+  active: false,
   currentFlow: undefined,
 };
 
@@ -19,17 +25,37 @@ export const useMSWRN = () => useContext(MSWContext);
 
 export const MSWProvider = ({
   children,
-  enabled,
+  enableMSWInEnv,
 }: PropsWithChildren<MSWProviderProps>): JSX.Element => {
-  const [state] = useReducer(MSWReducer, { ...initialState, enabled });
+  const [state, dispatch] = useReducer(MSWReducer, {
+    ...initialState,
+    enableMSWInEnv,
+  });
 
   useEffect(() => {
-    if (!enabled) {
+    if (!enableMSWInEnv) {
       return;
     }
 
-    createDeveloperMenu();
-  }, [enabled]);
+    const MSWEnabled = storage.getBoolean(generateKey('enabled'));
 
-  return <MSWContext.Provider value={state}>{children}</MSWContext.Provider>;
+    if (MSWEnabled) {
+      dispatch({ type: 'SET_ACTIVE', payload: true });
+      startServer();
+      console.warn('[MSW]: Enabled | All requests are being intercepted');
+    }
+
+    createDeveloperMenu();
+  }, [enableMSWInEnv]);
+
+  return (
+    <MSWContext.Provider value={state}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <BottomSheetModalProvider>
+          {children}
+          <BottomSheetPopup />
+        </BottomSheetModalProvider>
+      </GestureHandlerRootView>
+    </MSWContext.Provider>
+  );
 };

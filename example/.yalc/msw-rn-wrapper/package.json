@@ -1,0 +1,146 @@
+{
+  "name": "msw-rn-wrapper",
+  "version": "0.1.0",
+  "description": "Wrapper for MSW with React Native Support ",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/src/index.d.ts",
+  "react-native": "src/index.ts",
+  "source": "src/index.ts",
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/.*"
+  ],
+  "scripts": {
+    "example": "yarn workspace msw-rn-wrapper-example",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "clean": "del-cli lib",
+    "release": "release-it"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayfairr-plt/msw-rn-wrapper.git"
+  },
+  "author": "Zeeshan Khan <zeeshan.khan@prettylittlething.com> (https://mayfairr.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mayfairr-plt/msw-rn-wrapper/issues"
+  },
+  "homepage": "https://github.com/mayfairr-plt/msw-rn-wrapper#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "resolutions": {
+    "@types/react": "^18.2.44"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "workspaces": [
+    "example"
+  ],
+  "packageManager": "yarn@3.6.1",
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "dependencies": {
+    "@gorhom/bottom-sheet": "^4",
+    "@mswjs/data": "^0.16.1",
+    "fast-text-encoding": "^1.0.6",
+    "msw": "latest",
+    "react-native-gesture-handler": "^2.15.0",
+    "react-native-mmkv": "^2.12.2",
+    "react-native-reanimated": "^3.8.1",
+    "react-native-url-polyfill": "^2.0.0",
+    "text-encoding": "^0.7.0",
+    "text-encoding-polyfill": "^0.6.7"
+  },
+  "yalcSig": "9ebb07a048aeaa4780fb187d82fa0a0e"
+}

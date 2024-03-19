@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "msw-rn-wrapper": {
+      "version": "0.1.0",
+      "signature": "9ebb07a048aeaa4780fb187d82fa0a0e",
+      "file": true
+    }
+  }
+}

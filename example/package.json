@@ -10,8 +10,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "msw-rn-wrapper": "file:.yalc/msw-rn-wrapper",
     "react": "18.2.0",
-    "react-native": "0.73.6"
+    "react-native": "0.73.6",
+    "react-native-gesture-handler": "^2.15.0",
+    "react-native-mmkv": "^2.12.2",
+    "react-native-reanimated": "^3.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

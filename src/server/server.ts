@@ -1,8 +1,11 @@
 // @ts-nocheck
 import { type SetupWorkerApi } from 'msw';
+import { generateKey, storage } from 'msw-rn-wrapper/src/utils/storage';
 import { onUnhandledRequest } from 'msw/lib/core/utils/request/onUnhandledRequest';
 
 import { setupServer } from 'msw/native';
+import { DevSettings } from 'react-native';
+
 export const Server: SetupWorkerApi = setupServer(...[]);
 
 export const serverListen = () => {
@@ -18,4 +21,16 @@ export const serverListen = () => {
       print.warning();
     },
   });
+};
+
+export const startServer = async () => {
+  await import('../msw.polyfills');
+  serverListen();
+};
+
+export const stopServer = () => {
+  Server.close();
+  DevSettings.reload();
+  storage.set(generateKey('enabled'), false);
+  console.warn('[MSW]: Disabled | No longer intercepting requests');
 };
