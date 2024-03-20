@@ -77,7 +77,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-reanimated": "*"
   },
   "workspaces": [
     "example"
@@ -158,7 +159,6 @@
     "msw": "latest",
     "react-native-gesture-handler": "^2.15.0",
     "react-native-mmkv": "^2.12.2",
-    "react-native-reanimated": "^3.8.1",
     "react-native-url-polyfill": "^2.0.0",
     "text-encoding": "^0.7.0",
     "text-encoding-polyfill": "^0.6.7"
