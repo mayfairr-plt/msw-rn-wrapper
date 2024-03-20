@@ -7494,7 +7494,7 @@ __metadata:
 
 "msw-rn-wrapper@file:.yalc/msw-rn-wrapper::locator=example%40workspace%3A.":
   version: 0.1.0
-  resolution: "msw-rn-wrapper@file:.yalc/msw-rn-wrapper#.yalc/msw-rn-wrapper::hash=237675&locator=example%40workspace%3A."
+  resolution: "msw-rn-wrapper@file:.yalc/msw-rn-wrapper#.yalc/msw-rn-wrapper::hash=ffdfca&locator=example%40workspace%3A."
   dependencies:
     "@gorhom/bottom-sheet": ^4
     "@mswjs/data": ^0.16.1
@@ -7509,7 +7509,7 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: be3ca52f38f60086cc205ec91431023eb770d82a65ac6da3d2ddc3c761a739e93b1ccfb2aca7fcdb2c524802ce1807feb2a60291895a2393be7d309746b6a5ac
+  checksum: 31bdeb6644a48fc784dae00314d76034a1d373c1941e1ea7d57d6e48658bd41260287ff472181cb9379d4f9db05d9cfad5f8478e025ae46e8fd076fed1705e47
   languageName: node
   linkType: hard
 

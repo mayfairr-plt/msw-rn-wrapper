@@ -1,12 +1,12 @@
 import type { Flow } from '../../flows';
 
 export type MSWContextValues = {
-  flow: 'checkout';
   enableMSWInEnv: boolean;
-  currentFlow?: Flow;
   active: boolean;
+  flows: Array<Flow>;
 };
 
 export type MSWProviderProps = {
   enableMSWInEnv: boolean;
+  flows: Array<Flow>;
 };

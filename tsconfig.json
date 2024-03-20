@@ -26,7 +26,5 @@
     "target": "esnext",
     "verbatimModuleSyntax": true
   },
-  "exclude": [
-    "src/server/server.ts"
-  ]
+  "exclude": ["src/server/server.ts", "example/*"]
 }

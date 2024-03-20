@@ -1,11 +1,8 @@
+import { type Dispatch, type SetStateAction } from 'react';
 import { DevSettings } from 'react-native';
-import { generateKey, storage } from '../utils/storage';
 
-export const createDeveloperMenu = () => {
-  DevSettings.addMenuItem('View MSW Settings', enableDeveloperSettings);
-};
-
-const enableDeveloperSettings = async () => {
-  storage.set(generateKey('enabled'), true);
-  DevSettings.reload();
+export const createDeveloperMenu = (
+  showMenu: Dispatch<SetStateAction<boolean>>
+) => {
+  DevSettings.addMenuItem('View MSW Settings', () => showMenu(true));
 };

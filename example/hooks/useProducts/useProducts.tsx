@@ -11,7 +11,7 @@ export const useProducts = () => {
       const responseData: Product[] = await response.json();
       setData(responseData);
     } catch (e) {
-      console.error(e);
+      console.error(JSON.stringify(e));
     } finally {
       setLoading(false);
     }

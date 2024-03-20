@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useReducer } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { createContext, type PropsWithChildren } from 'react';
 import {
   type MSWContextValues,
@@ -13,10 +13,9 @@ import { BottomSheetPopup } from '../menu';
 import { startServer } from '../server';
 
 const initialState: MSWContextValues = {
-  flow: 'checkout',
   enableMSWInEnv: false,
   active: false,
-  currentFlow: undefined,
+  flows: [],
 };
 
 const MSWContext = createContext<MSWContextValues>(initialState);
@@ -26,11 +25,15 @@ export const useMSWRN = () => useContext(MSWContext);
 export const MSWProvider = ({
   children,
   enableMSWInEnv,
+  flows,
 }: PropsWithChildren<MSWProviderProps>): JSX.Element => {
   const [state, dispatch] = useReducer(MSWReducer, {
     ...initialState,
+    flows,
     enableMSWInEnv,
   });
+
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
   useEffect(() => {
     if (!enableMSWInEnv) {
@@ -45,7 +48,7 @@ export const MSWProvider = ({
       console.warn('[MSW]: Enabled | All requests are being intercepted');
     }
 
-    createDeveloperMenu();
+    createDeveloperMenu(setShowMenu);
   }, [enableMSWInEnv]);
 
   return (
@@ -53,7 +56,7 @@ export const MSWProvider = ({
       <GestureHandlerRootView style={{ flex: 1 }}>
         <BottomSheetModalProvider>
           {children}
-          <BottomSheetPopup />
+          {showMenu && <BottomSheetPopup />}
         </BottomSheetModalProvider>
       </GestureHandlerRootView>
     </MSWContext.Provider>
