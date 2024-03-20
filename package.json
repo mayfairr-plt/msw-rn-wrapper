@@ -78,7 +78,8 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-reanimated": "*"
+    "react-native-reanimated": "*",
+    "react-native-gesture-handler": "*"
   },
   "workspaces": [
     "example"
@@ -157,7 +158,6 @@
     "@mswjs/data": "^0.16.1",
     "fast-text-encoding": "^1.0.6",
     "msw": "latest",
-    "react-native-gesture-handler": "^2.15.0",
     "react-native-mmkv": "^2.12.2",
     "react-native-url-polyfill": "^2.0.0",
     "text-encoding": "^0.7.0",
