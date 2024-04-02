@@ -7281,6 +7281,9 @@ __metadata:
     prettier: 2.8.8
     react: 18.2.0
     react-native: 0.73.6
+    react-native-gesture-handler: ^2.15.0
+    react-native-mmkv: ^2.12.2
+    react-native-reanimated: ^3.8.1
     react-test-renderer: 18.2.0
     typescript: 5.0.4
   languageName: unknown
@@ -10883,18 +10886,22 @@ __metadata:
 
 "msw-rn-wrapper@file:.yalc/msw-rn-wrapper::locator=example%40workspace%3Aexample":
   version: 0.1.0
-  resolution: "msw-rn-wrapper@file:.yalc/msw-rn-wrapper#.yalc/msw-rn-wrapper::hash=106d9c&locator=example%40workspace%3Aexample"
+  resolution: "msw-rn-wrapper@file:.yalc/msw-rn-wrapper#.yalc/msw-rn-wrapper::hash=75aaa0&locator=example%40workspace%3Aexample"
   dependencies:
+    "@gorhom/bottom-sheet": ^4
     "@mswjs/data": ^0.16.1
     fast-text-encoding: ^1.0.6
     msw: latest
+    react-native-gesture-handler: ^2.15.0
     react-native-mmkv: ^2.12.2
+    react-native-reanimated: ^3.8.1
     react-native-url-polyfill: ^2.0.0
+    text-encoding: ^0.7.0
     text-encoding-polyfill: ^0.6.7
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 09fec6656711466ad4923c780d192179d8be045a1f77eee744d89a0eefe06f6956afca53a4a6af7b85e120bfd6d493126932c8b35b837e31fbc86b9473b8790e
+  checksum: e2cdbeaf0739cfd13d42f8dfb9a79d01f1fff8692e2054617118c9c3d969775ca3116a1f7e533060da89cc804275eaca64f99dda7dc015ff2dfb7cd2a523d870
   languageName: node
   linkType: hard
 
@@ -10922,9 +10929,7 @@ __metadata:
     react: 18.2.0
     react-native: 0.73.5
     react-native-builder-bob: ^0.23.2
-    react-native-gesture-handler: ^2.15.0
     react-native-mmkv: ^2.12.2
-    react-native-reanimated: ^3.8.1
     react-native-url-polyfill: ^2.0.0
     release-it: ^15.0.0
     text-encoding: ^0.7.0
@@ -10933,6 +10938,8 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
+    react-native-gesture-handler: "*"
+    react-native-reanimated: "*"
   languageName: unknown
   linkType: soft
 

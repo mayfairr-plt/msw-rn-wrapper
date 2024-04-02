@@ -13,7 +13,6 @@ const enableMSW = () => {
 };
 
 export const BottomSheetPopup = () => {
-  const { active, flows } = useMSWRN();
   return (
     <BottomSheet
       snapPoints={['50%']}
@@ -21,31 +20,40 @@ export const BottomSheetPopup = () => {
       enablePanDownToClose
     >
       <BottomSheetView style={styles.container}>
-        <View style={styles.statusContainer}>
-          <Text>
-            Status:{' '}
-            <Text style={{ color: active ? 'green' : 'red' }}>
-              {active ? 'Active' : 'Inactive'}
-            </Text>
-          </Text>
-          {active ? (
-            <Pressable onPress={stopServer}>
-              <Text style={styles.buttonText}>Disable</Text>
-            </Pressable>
-          ) : (
-            <Pressable onPress={enableMSW}>
-              <Text style={styles.buttonText}>Enable</Text>
-            </Pressable>
-          )}
-        </View>
-
-        <Text style={styles.title}>Flows</Text>
-        <View>
-          {flows.map((flow) => {
-            return <Button title={`- ${flow.name}`} onPress={flow.activate} />;
-          })}
-        </View>
+        <FlowsList />
       </BottomSheetView>
     </BottomSheet>
+  );
+};
+
+export const FlowsList = () => {
+  const { active, flows } = useMSWRN();
+  return (
+    <>
+      <View style={styles.statusContainer}>
+        <Text>
+          Status:{' '}
+          <Text style={{ color: active ? 'green' : 'red' }}>
+            {active ? 'Active' : 'Inactive'}
+          </Text>
+        </Text>
+        {active ? (
+          <Pressable onPress={stopServer}>
+            <Text style={styles.buttonText}>Disable</Text>
+          </Pressable>
+        ) : (
+          <Pressable onPress={enableMSW}>
+            <Text style={styles.buttonText}>Enable</Text>
+          </Pressable>
+        )}
+      </View>
+
+      <Text style={styles.title}>Flows</Text>
+      <View>
+        {flows.map((flow) => {
+          return <Button title={`- ${flow.name}`} onPress={flow.activate} />;
+        })}
+      </View>
+    </>
   );
 };
