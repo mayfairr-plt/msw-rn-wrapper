@@ -13,9 +13,7 @@ import {
   SERIALIZED_INTERNAL_PROPERTIES_KEY,
 } from '@mswjs/data/lib/db/Database';
 import { inheritInternalProperties } from '@mswjs/data/lib/utils/inheritInternalProperties';
-import { storage } from '../utils/storage';
-
-const STORAGE_KEY_PREFIX = 'mswjs-data';
+import { storage, STORAGE_KEY_PREFIX } from '../utils/storage';
 
 const DEBOUNCE_PERSIST_TIME_MS = 10;
 

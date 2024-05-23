@@ -1,2 +1,2 @@
 export * from './DeveloperMenu';
-export * from './bottom-sheet';
+export * from './MSWSettings';
