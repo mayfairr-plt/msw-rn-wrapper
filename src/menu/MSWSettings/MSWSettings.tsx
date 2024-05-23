@@ -1,32 +1,17 @@
 import React from 'react';
-import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
-import { Button, DevSettings, Text, View } from 'react-native';
+import { Button, View, Text, Pressable, DevSettings } from 'react-native';
 import { useMSWRN } from '../../context';
+import { styles } from './MSWSettings.styles';
+
 import { stopServer } from '../../server';
 import { generateKey, storage } from '../../utils/storage';
-import { styles } from './BottomSheet.styles';
-import { Pressable } from 'react-native';
 
 const enableMSW = () => {
   storage.set(generateKey('enabled'), true);
   DevSettings.reload();
 };
 
-export const BottomSheetPopup = () => {
-  return (
-    <BottomSheet
-      snapPoints={['50%']}
-      style={styles.bottomSheet}
-      enablePanDownToClose
-    >
-      <BottomSheetView style={styles.container}>
-        <FlowsList />
-      </BottomSheetView>
-    </BottomSheet>
-  );
-};
-
-export const FlowsList = () => {
+export const MSWSettings = () => {
   const { active, flows } = useMSWRN();
   return (
     <>

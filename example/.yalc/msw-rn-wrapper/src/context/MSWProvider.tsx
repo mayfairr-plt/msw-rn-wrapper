@@ -1,4 +1,10 @@
-import React, { useContext, useEffect, useReducer, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from 'react';
 import { createContext, type PropsWithChildren } from 'react';
 import {
   type MSWContextValues,
@@ -7,13 +13,13 @@ import {
 import { MSWReducer } from './MSWReducer';
 import { createDeveloperMenu } from '../menu';
 import { generateKey, storage } from '../utils/storage';
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { BottomSheetPopup } from '../menu';
 import { startServer } from '../server';
+import persist from '../database/persist';
 
 const initialState: MSWContextValues = {
   enableMSWInEnv: false,
+  database: undefined,
   active: false,
   flows: [],
 };
@@ -26,20 +32,18 @@ export const MSWProvider = ({
   children,
   enableMSWInEnv,
   flows,
+  database,
 }: PropsWithChildren<MSWProviderProps>): JSX.Element => {
   const [state, dispatch] = useReducer(MSWReducer, {
     ...initialState,
     flows,
     enableMSWInEnv,
+    database,
   });
 
-  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [_showMenu, setShowMenu] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (!enableMSWInEnv) {
-      return;
-    }
-
+  const checkMSWEnabled = useCallback(() => {
     const MSWEnabled = storage.getBoolean(generateKey('enabled'));
 
     if (MSWEnabled) {
@@ -47,17 +51,26 @@ export const MSWProvider = ({
       startServer();
       console.warn('[MSW]: Enabled | All requests are being intercepted');
     }
+  }, []);
+
+  useEffect(() => {
+    if (!enableMSWInEnv || !state.database) {
+      if (!state.database) {
+        console.error('[MSW]: Database does not exist');
+      }
+      return;
+    }
+
+    checkMSWEnabled();
+    persist(state.database);
 
     createDeveloperMenu(setShowMenu);
-  }, [enableMSWInEnv]);
+  }, [enableMSWInEnv, checkMSWEnabled, state.database]);
 
   return (
     <MSWContext.Provider value={state}>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <BottomSheetModalProvider>
-          {children}
-          {showMenu && <BottomSheetPopup />}
-        </BottomSheetModalProvider>
+        {children}
       </GestureHandlerRootView>
     </MSWContext.Provider>
   );

@@ -2,8 +2,7 @@
   "version": "v1",
   "packages": {
     "msw-rn-wrapper": {
-      "version": "0.1.0",
-      "signature": "c4513c39a54c589694a310162d5130b2",
+      "signature": "17d21634ad00e083554ddb91bb47122c",
       "file": true
     }
   }
