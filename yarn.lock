@@ -2799,40 +2799,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gorhom/bottom-sheet@npm:^4":
-  version: 4.6.1
-  resolution: "@gorhom/bottom-sheet@npm:4.6.1"
-  dependencies:
-    "@gorhom/portal": 1.0.14
-    invariant: ^2.2.4
-  peerDependencies:
-    "@types/react": "*"
-    "@types/react-native": "*"
-    react: "*"
-    react-native: "*"
-    react-native-gesture-handler: ">=1.10.1"
-    react-native-reanimated: ">=2.2.0"
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-    "@types/react-native":
-      optional: true
-  checksum: fc30da15c5d7e7c7b81ad2450e6ecb3884f0e040bc1ed5f467b1f846e2598519608a21c14cd50ea8288caac3cdfd9ad2c7742c31c77dd137804f94148105f389
-  languageName: node
-  linkType: hard
-
-"@gorhom/portal@npm:1.0.14":
-  version: 1.0.14
-  resolution: "@gorhom/portal@npm:1.0.14"
-  dependencies:
-    nanoid: ^3.3.1
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 227bb96a2db854ab29bb9da8d4f3823c7f7448358de459709dd1b78522110da564c9a8734c6bc7d7153ed7c99320e0fb5d60b420c2ebb75ecaf2f0d757f410f9
-  languageName: node
-  linkType: hard
-
 "@hapi/hoek@npm:^9.0.0, @hapi/hoek@npm:^9.3.0":
   version: 9.3.0
   resolution: "@hapi/hoek@npm:9.3.0"
@@ -10885,23 +10851,20 @@ __metadata:
   linkType: hard
 
 "msw-rn-wrapper@file:.yalc/msw-rn-wrapper::locator=example%40workspace%3Aexample":
-  version: 0.1.0
-  resolution: "msw-rn-wrapper@file:.yalc/msw-rn-wrapper#.yalc/msw-rn-wrapper::hash=75aaa0&locator=example%40workspace%3Aexample"
+  version: 0.1.3
+  resolution: "msw-rn-wrapper@file:.yalc/msw-rn-wrapper#.yalc/msw-rn-wrapper::hash=431524&locator=example%40workspace%3Aexample"
   dependencies:
-    "@gorhom/bottom-sheet": ^4
     "@mswjs/data": ^0.16.1
     fast-text-encoding: ^1.0.6
     msw: latest
-    react-native-gesture-handler: ^2.15.0
     react-native-mmkv: ^2.12.2
-    react-native-reanimated: ^3.8.1
     react-native-url-polyfill: ^2.0.0
     text-encoding: ^0.7.0
     text-encoding-polyfill: ^0.6.7
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: e2cdbeaf0739cfd13d42f8dfb9a79d01f1fff8692e2054617118c9c3d969775ca3116a1f7e533060da89cc804275eaca64f99dda7dc015ff2dfb7cd2a523d870
+  checksum: fb06171c0c36aaa702201d3ddb7d24934a1b728164549aa98ad727f5d6df96347adcccef16bfd18967f5a2d67e6e3398d464033643edbc003a563407720447d5
   languageName: node
   linkType: hard
 
@@ -10911,7 +10874,6 @@ __metadata:
   dependencies:
     "@commitlint/config-conventional": ^17.0.2
     "@evilmartians/lefthook": ^1.5.0
-    "@gorhom/bottom-sheet": ^4
     "@mswjs/data": ^0.16.1
     "@react-native/eslint-config": ^0.73.1
     "@release-it/conventional-changelog": ^5.0.0
@@ -10938,8 +10900,6 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-    react-native-gesture-handler: "*"
-    react-native-reanimated: "*"
   languageName: unknown
   linkType: soft
 
@@ -11011,15 +10971,6 @@ __metadata:
   version: 1.0.0
   resolution: "mute-stream@npm:1.0.0"
   checksum: 36fc968b0e9c9c63029d4f9dc63911950a3bdf55c9a87f58d3a266289b67180201cade911e7699f8b2fa596b34c9db43dad37649e3f7fdd13c3bb9edb0017ee7
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:^3.3.1":
-  version: 3.3.7
-  resolution: "nanoid@npm:3.3.7"
-  bin:
-    nanoid: bin/nanoid.cjs
-  checksum: d36c427e530713e4ac6567d488b489a36582ef89da1d6d4e3b87eded11eb10d7042a877958c6f104929809b2ab0bafa17652b076cdf84324aa75b30b722204f2
   languageName: node
   linkType: hard
 
