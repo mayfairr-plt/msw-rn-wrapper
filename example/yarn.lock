@@ -1706,40 +1706,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gorhom/bottom-sheet@npm:^4":
-  version: 4.6.1
-  resolution: "@gorhom/bottom-sheet@npm:4.6.1"
-  dependencies:
-    "@gorhom/portal": 1.0.14
-    invariant: ^2.2.4
-  peerDependencies:
-    "@types/react": "*"
-    "@types/react-native": "*"
-    react: "*"
-    react-native: "*"
-    react-native-gesture-handler: ">=1.10.1"
-    react-native-reanimated: ">=2.2.0"
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-    "@types/react-native":
-      optional: true
-  checksum: fc30da15c5d7e7c7b81ad2450e6ecb3884f0e040bc1ed5f467b1f846e2598519608a21c14cd50ea8288caac3cdfd9ad2c7742c31c77dd137804f94148105f389
-  languageName: node
-  linkType: hard
-
-"@gorhom/portal@npm:1.0.14":
-  version: 1.0.14
-  resolution: "@gorhom/portal@npm:1.0.14"
-  dependencies:
-    nanoid: ^3.3.1
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 227bb96a2db854ab29bb9da8d4f3823c7f7448358de459709dd1b78522110da564c9a8734c6bc7d7153ed7c99320e0fb5d60b420c2ebb75ecaf2f0d757f410f9
-  languageName: node
-  linkType: hard
-
 "@hapi/hoek@npm:^9.0.0, @hapi/hoek@npm:^9.3.0":
   version: 9.3.0
   resolution: "@hapi/hoek@npm:9.3.0"
@@ -7493,23 +7459,20 @@ __metadata:
   linkType: hard
 
 "msw-rn-wrapper@file:.yalc/msw-rn-wrapper::locator=example%40workspace%3A.":
-  version: 0.1.0
-  resolution: "msw-rn-wrapper@file:.yalc/msw-rn-wrapper#.yalc/msw-rn-wrapper::hash=e6330c&locator=example%40workspace%3A."
+  version: 0.2.0
+  resolution: "msw-rn-wrapper@file:.yalc/msw-rn-wrapper#.yalc/msw-rn-wrapper::hash=c1139b&locator=example%40workspace%3A."
   dependencies:
-    "@gorhom/bottom-sheet": ^4
     "@mswjs/data": ^0.16.1
     fast-text-encoding: ^1.0.6
     msw: latest
-    react-native-gesture-handler: ^2.15.0
     react-native-mmkv: ^2.12.2
-    react-native-reanimated: ^3.8.1
     react-native-url-polyfill: ^2.0.0
     text-encoding: ^0.7.0
     text-encoding-polyfill: ^0.6.7
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: a5ba37f59e5d8a8fe8530c5ee6115458ccd096a28e6917e9e9ec2b328be058a216204fc081804750ae916735758234d3eda6f59218b493533add6c134127c41c
+  checksum: 55e81ee8c25a0902236dfbaaa9f13dd934bf1320976e8df87f5cacee3a02d14a2726fad0af66ebd35ac4ed8ba43ccd1245e4c2b61a8851c8c9fcdb45fef47493
   languageName: node
   linkType: hard
 
@@ -7549,15 +7512,6 @@ __metadata:
   version: 1.0.0
   resolution: "mute-stream@npm:1.0.0"
   checksum: 36fc968b0e9c9c63029d4f9dc63911950a3bdf55c9a87f58d3a266289b67180201cade911e7699f8b2fa596b34c9db43dad37649e3f7fdd13c3bb9edb0017ee7
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:^3.3.1":
-  version: 3.3.7
-  resolution: "nanoid@npm:3.3.7"
-  bin:
-    nanoid: bin/nanoid.cjs
-  checksum: d36c427e530713e4ac6567d488b489a36582ef89da1d6d4e3b87eded11eb10d7042a877958c6f104929809b2ab0bafa17652b076cdf84324aa75b30b722204f2
   languageName: node
   linkType: hard
 
