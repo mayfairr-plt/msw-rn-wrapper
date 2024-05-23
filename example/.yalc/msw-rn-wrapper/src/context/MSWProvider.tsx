@@ -13,7 +13,6 @@ import {
 import { MSWReducer } from './MSWReducer';
 import { createDeveloperMenu } from '../menu';
 import { generateKey, storage } from '../utils/storage';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { startServer } from '../server';
 import persist from '../database/persist';
 
@@ -67,11 +66,5 @@ export const MSWProvider = ({
     createDeveloperMenu(setShowMenu);
   }, [enableMSWInEnv, checkMSWEnabled, state.database]);
 
-  return (
-    <MSWContext.Provider value={state}>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        {children}
-      </GestureHandlerRootView>
-    </MSWContext.Provider>
-  );
+  return <MSWContext.Provider value={state}>{children}</MSWContext.Provider>;
 };
